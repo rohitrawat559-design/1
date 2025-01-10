@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from "./component/Navbar";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+  <Navbar />
+    <div className="container mx-auto my-5 rounded-xl p-5 bg-violet-300 min-h-[80vh]">
+      <div className="addTodo">
+        <input type="text" className="w-52 px-3 py-2 rounded-md text-gray-700 focus:outline-none " placeholder="Add a new todo..."/>
+        <button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700 margin">Add</button>
+      
+       <h1 className="text-xl font-bold"> Your Todo</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="todos">
+        <div className="todo-flex">
+          <div className="todo-text">
+            <p>This is a sample todo Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div className="todo-actions">
+            <button className="bg-violet-800 text-white-800 hover:bg-gray-400 px-2 py-1 font-bold  rounded-mdx-2">Edit</button>
+            <button className="bg-violet-800 text-white-800 hover:bg-gray-400 px-2 py-1 font-bold  rounded-mdx-2">Delete</button>
+    
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
+    </div>
+    </div>
+
+  
+    
+
+    
   )
 }
-
-export default App
